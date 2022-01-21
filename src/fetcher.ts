@@ -1,5 +1,4 @@
 import axios from 'axios'
-import { AURInfo, AURSearch } from './types/aur'
 
 /**
  * Jest is suffering with imports from node-fetch
@@ -7,9 +6,7 @@ import { AURInfo, AURSearch } from './types/aur'
  */
 // const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 
-export default async (
-    link: string | undefined
-): Promise<any | AURInfo | AURSearch> => {
+export default async (link: string | undefined): Promise<any> => {
     if (!link) {
         throw new Error('No link provided')
     }
