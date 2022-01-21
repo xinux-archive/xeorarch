@@ -1,4 +1,2 @@
-import AUR from './aur'
-import STD from './packages'
-
-export default { AUR, STD }
+export * as AUR from './aur'
+export * as STD from './std'

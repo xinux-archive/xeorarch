@@ -48,3 +48,12 @@ export interface AURInfo {
     resultcount: number
     results: AURInfoResult[]
 }
+
+export type searchBy =
+    | 'name'
+    | 'name-desc'
+    | 'maintainer'
+    | 'depends'
+    | 'makedepends'
+    | 'optdepends'
+    | 'checkdepends'

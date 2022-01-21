@@ -13,7 +13,7 @@ export interface PackageInfo {
     pkgrel: string | number
     epoch: number
     pkgdesc: string
-    url: string | URL
+    url: string
     filename: string
     compressed_size: number
     installed_size: number
