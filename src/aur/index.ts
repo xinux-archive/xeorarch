@@ -31,7 +31,7 @@ const search = async (
  * Get info about one or multiple packages
  * @param query Packages to get info for
  */
-const info = async (query: string | string[]): Promise<AURInfo> => {
+const info = async (query: string | string[]): Promise<AURInfo[]> => {
     if (typeof query === 'string') {
         query = [query]
     }
@@ -43,4 +43,4 @@ const info = async (query: string | string[]): Promise<AURInfo> => {
     return response.results
 }
 
-export const AUR = { search, info }
+export default { search, info }

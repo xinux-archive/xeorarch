@@ -37,7 +37,7 @@ export interface AURInfoResult {
     FirstSubmitted: number
     LastModified: number
     URLPath: string
-    Depends: string[]
+    Depends?: string[]
     License: string[]
     Keywords: string[]
 }

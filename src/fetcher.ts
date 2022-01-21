@@ -1,4 +1,4 @@
-import fetch from 'node-fetch'
+import axios from 'axios'
 import { AURInfo, AURSearch } from './types/aur'
 
 /**
@@ -15,8 +15,8 @@ export default async (
     }
 
     try {
-        const response = await fetch(link)
-        return await response.json()
+        const response = await axios(link)
+        return await response.data
     } catch (error) {
         throw new Error('Error fetching data:')
     }
