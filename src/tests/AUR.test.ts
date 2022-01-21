@@ -1,4 +1,4 @@
-import { AUR } from '../aur'
+import AUR from '../aur'
 
 test('Querying Info', async () => {
     const request = await AUR.info(['hello', 'world'])
