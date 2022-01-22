@@ -4,7 +4,7 @@
 
 Archlinux Paketlar SDK menejeri
 
-[![Version](https://img.shields.io/badge/API-v1.5.1-f36caf.svg?style=flat-square)](https://core.telegram.org/bots/api)
+[![Version](https://img.shields.io/badge/API-v1.6.0-f36caf.svg?style=flat-square)](https://core.telegram.org/bots/api)
 [![install size](https://flat.badgen.net/packagephobia/install/xeorarch)](https://packagephobia.com/result?p=xeorarch)
 [![GitHub top language](https://img.shields.io/github/languages/top/xinuxuz/xeorarch?style=flat-square&logo=github)](https://github.com/xinuxuz/xeorarch)
 [![Chat](https://img.shields.io/badge/Chat-grey?style=flat-square&logo=telegram)](https://t.me/xinuxuz)
