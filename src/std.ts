@@ -59,7 +59,10 @@ export const search = async (name: string): Promise<PackageSearch> => {
  * @param name Packages to get info for
  * @exports
  */
-export const info = async (arch: string, name: string): Promise<PackageInfo | any[]> => {
+export const info = async (
+    arch: string,
+    name: string
+): Promise<PackageInfo | any[]> => {
     // Base AUR API URL
     const url = `https://archlinux.org/packages/${arch}/x86_64/${name}/json`
     try {
