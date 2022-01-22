@@ -10,6 +10,8 @@ specifiers:
   tslint: ^6.1.3
   tslint-config-prettier: ^1.18.0
   typedoc: ^0.22.11
+  typedoc-github-wiki-theme: ^1.0.0
+  typedoc-plugin-markdown: ^3.11.12
   typescript: ^4.5.4
 
 dependencies:
@@ -24,6 +26,8 @@ devDependencies:
   tslint: 6.1.3_typescript@4.5.4
   tslint-config-prettier: 1.18.0
   typedoc: 0.22.11_typescript@4.5.4
+  typedoc-github-wiki-theme: 1.0.0_005045faa306d2a21d7d1ed5d301d630
+  typedoc-plugin-markdown: 3.11.12_typedoc@0.22.11
   typescript: 4.5.4
 
 packages:
@@ -1271,6 +1275,19 @@ packages:
     resolution: {integrity: sha512-NtNxqUcXgpW2iMrfqSfR73Glt39K+BLwWsPs94yR63v45T0Wbej7eRmL5cWfwEgqXnmjQp3zaJTshdRW/qC2ZQ==}
     dev: true
 
+  /handlebars/4.7.7:
+    resolution: {integrity: sha512-aAcXm5OAfE/8IXkcZvCepKU3VzW1/39Fb5ZuqMtgI/hT8X2YgoMvBY5dLhq/cpOvw7Lk1nK/UF71aLG/ZnVYRA==}
+    engines: {node: '>=0.4.7'}
+    hasBin: true
+    dependencies:
+      minimist: 1.2.5
+      neo-async: 2.6.2
+      source-map: 0.6.1
+      wordwrap: 1.0.0
+    optionalDependencies:
+      uglify-js: 3.14.5
+    dev: true
+
   /has-flag/3.0.0:
     resolution: {integrity: sha1-tdRU3CGZriJWmfNGfloH87lVuv0=}
     engines: {node: '>=4'}
@@ -2099,6 +2116,10 @@ packages:
     resolution: {integrity: sha1-Sr6/7tdUHywnrPspvbvRXI1bpPc=}
     dev: true
 
+  /neo-async/2.6.2:
+    resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
+    dev: true
+
   /node-int64/0.4.0:
     resolution: {integrity: sha1-h6kGXNs1XTGC2PlM4RGIuCXGijs=}
     dev: true
@@ -2614,6 +2635,25 @@ packages:
       is-typedarray: 1.0.0
     dev: true
 
+  /typedoc-github-wiki-theme/1.0.0_005045faa306d2a21d7d1ed5d301d630:
+    resolution: {integrity: sha512-8ZuRBSTq15j7oTCMRAiZV3t7KH+Y6tOXkEcyRj5HUEwCgd08DCfXpSrLHjXc83MlvvGi+16n7LuXK17NkEjf/g==}
+    peerDependencies:
+      typedoc: '>=0.22.9'
+      typedoc-plugin-markdown: '>=3.11.10'
+    dependencies:
+      typedoc: 0.22.11_typescript@4.5.4
+      typedoc-plugin-markdown: 3.11.12_typedoc@0.22.11
+    dev: true
+
+  /typedoc-plugin-markdown/3.11.12_typedoc@0.22.11:
+    resolution: {integrity: sha512-gb/RuzgZ1zCnRUOqUg6firIqU7xDs9s7hq0vlU/gAsFfVCnpl3NTM9vPyPON75nnpfVFCxr/hmKQ01k1CYY/Qg==}
+    peerDependencies:
+      typedoc: '>=0.22.0'
+    dependencies:
+      handlebars: 4.7.7
+      typedoc: 0.22.11_typescript@4.5.4
+    dev: true
+
   /typedoc/0.22.11_typescript@4.5.4:
     resolution: {integrity: sha512-pVr3hh6dkS3lPPaZz1fNpvcrqLdtEvXmXayN55czlamSgvEjh+57GUqfhAI1Xsuu/hNHUT1KNSx8LH2wBP/7SA==}
     engines: {node: '>= 12.10.0'}
@@ -2634,6 +2674,14 @@ packages:
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: true
+
+  /uglify-js/3.14.5:
+    resolution: {integrity: sha512-qZukoSxOG0urUTvjc2ERMTcAy+BiFh3weWAkeurLwjrCba73poHmG3E36XEjd/JGukMzwTL7uCxZiAexj8ppvQ==}
+    engines: {node: '>=0.8.0'}
+    hasBin: true
+    requiresBuild: true
+    dev: true
+    optional: true
 
   /universalify/0.1.2:
     resolution: {integrity: sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg==}
@@ -2716,6 +2764,10 @@ packages:
   /word-wrap/1.2.3:
     resolution: {integrity: sha512-Hz/mrNwitNRh/HUAtM/VT/5VH+ygD6DV7mYKZAtHOrbs8U7lvPS6xf7EJKMF0uW1KJCl0H701g3ZGus+muE5vQ==}
     engines: {node: '>=0.10.0'}
+    dev: true
+
+  /wordwrap/1.0.0:
+    resolution: {integrity: sha1-J1hIEIkUVqQXHI0CJkQa3pDLyus=}
     dev: true
 
   /wrap-ansi/7.0.0:
