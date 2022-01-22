@@ -8,6 +8,7 @@ Archlinux Paketlar SDK menejeri
 [![install size](https://flat.badgen.net/packagephobia/install/xeorarch)](https://packagephobia.com/result?p=xeorarch)
 [![GitHub top language](https://img.shields.io/github/languages/top/xinuxuz/xeorarch?style=flat-square&logo=github)](https://github.com/xinuxuz/xeorarch)
 [![Chat](https://img.shields.io/badge/Chat-grey?style=flat-square&logo=telegram)](https://t.me/xinuxuz)
+[![Test CI](https://github.com/xinuxuz/xeorarch/actions/workflows/test.yml/badge.svg)](https://github.com/xinuxuz/xeorarch/actions/workflows/test.yml)
 </header>
 
 ## Haqida...
