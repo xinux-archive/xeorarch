@@ -14,19 +14,32 @@ test('Query Search', async () => {
     // Check for packages to have required keys
     const packages = request.results
     const requiredPacks = [
-        'pkgname',         'pkgbase',
-        'repo',            'arch',
-        'pkgver',          'pkgrel',
-        'epoch',           'pkgdesc',
-        'url',             'filename',
-        'compressed_size', 'installed_size',
-        'build_date',      'last_update',
-        'flag_date',       'maintainers',
-        'packager',        'groups',
-        'licenses',        'conflicts',
-        'provides',        'replaces',
-        'depends',         'optdepends',
-        'makedepends',     'checkdepends'
+        'pkgname',
+        'pkgbase',
+        'repo',
+        'arch',
+        'pkgver',
+        'pkgrel',
+        'epoch',
+        'pkgdesc',
+        'url',
+        'filename',
+        'compressed_size',
+        'installed_size',
+        'build_date',
+        'last_update',
+        'flag_date',
+        'maintainers',
+        'packager',
+        'groups',
+        'licenses',
+        'conflicts',
+        'provides',
+        'replaces',
+        'depends',
+        'optdepends',
+        'makedepends',
+        'checkdepends'
     ]
 
     for (const packer of packages) {
