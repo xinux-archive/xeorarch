@@ -1,0 +1,52 @@
+<!DOCTYPE html><html class="default"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>Xeorarch - v1.6.0</title><meta name="description" content="Documentation for Xeorarch - v1.6.0"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script async src="assets/search.js" id="search-script"></script></head><body><script>document.body.classList.add(localStorage.getItem("tsd-theme") || "os")</script><header><div class="tsd-page-toolbar"><div class="container"><div class="table-wrap"><div class="table-cell" id="tsd-search" data-base="."><div class="field"><label for="tsd-search-field" class="tsd-widget search no-caption">Search</label><input type="text" id="tsd-search-field"/></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">Xeorarch - v1.6.0</a></div><div class="table-cell" id="tsd-widgets"><div id="tsd-filter"><a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a><div class="tsd-filter-group"><div class="tsd-select" id="tsd-filter-visibility"><span class="tsd-select-label">All</span><ul class="tsd-select-list"><li data-value="public">Public</li><li data-value="protected">Public/Protected</li><li data-value="private" class="selected">All</li></ul></div> <input type="checkbox" id="tsd-filter-inherited" checked/><label class="tsd-widget" for="tsd-filter-inherited">Inherited</label><input type="checkbox" id="tsd-filter-externals" checked/><label class="tsd-widget" for="tsd-filter-externals">Externals</label></div></div><a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a></div></div></div></div><div class="tsd-page-title"><div class="container"><h1>Xeorarch - v1.6.0</h1></div></div></header><div class="container container-main"><div class="row"><div class="col-8 col-content"><div class="tsd-panel tsd-typography"><header>
+<img src="https://raw.githubusercontent.com/xinuxuz/xeorarch/main/docs/assets/logo.svg" alt="logo" height="100" align="left">
+<h1 style="display: inline">Xeorarch</h1>
+
+<p>Archlinux Paketlar SDK menejeri</p>
+<p><a href="https://core.telegram.org/bots/api"><img src="https://img.shields.io/badge/API-v1.6.0-f36caf.svg?style=flat-square" alt="Version"></a>
+<a href="https://packagephobia.com/result?p=xeorarch"><img src="https://flat.badgen.net/packagephobia/install/xeorarch" alt="install size"></a>
+<a href="https://github.com/xinuxuz/xeorarch"><img src="https://img.shields.io/github/languages/top/xinuxuz/xeorarch?style=flat-square&logo=github" alt="GitHub top language"></a>
+<a href="https://t.me/xinuxuz"><img src="https://img.shields.io/badge/Chat-grey?style=flat-square&logo=telegram" alt="Chat"></a>
+<a href="https://github.com/xinuxuz/xeorarch/actions/workflows/test.yml"><img src="https://github.com/xinuxuz/xeorarch/actions/workflows/test.yml/badge.svg" alt="Test CI"></a></p>
+</header>
+
+
+<a href="#haqida" id="haqida" style="color: inherit; text-decoration: none;">
+  <h2>Haqida</h2>
+</a>
+<p>Archlinux o&#39;zining &#39;pacman&#39; nomli shaxsiy paketlar menejeriga ega. Undan narsalar qidirish esa ikki usulda bajariladi. Birinichisi o&#39;rnatilgan
+pacman paketlar menejerini kerakli argumentlar bilan chaqirish yordamida bo&#39;lsa, ikkinchisi esa <a href="https://archlinux.org/packages/">https://archlinux.org/packages/</a> yoki
+<a href="https://aur.archlinux.org/">https://aur.archlinux.org/</a> tashrif buyurgan holda kalit so&#39;zlarini kiritib izlash yordamidadir va bu ba&#39;zi jihatdan noqulaydir. Shu jumladan,
+qolgan yangiliklar, o&#39;zgarishlar va boshqa shunday informatsiyalar olish noqulay bo&#39;lgani sababli, biz, Xinux jamiyati, Archlinux turkumini 
+yoqtiruvchi community sifatida ushbu distributiv uchun TypeScript/JavaScript da SDK yozishga qaror qildik va ushbu paketni ishlab chiqdik.
+Ushbu paket yordamida siz biz yozgan qisqartmalar yordamida informatsiyalar tezda qo&#39;lga kiritib, ularni o&#39;zingizning mahsulotingiz ishlab
+chiqarishda ishlatishingiz mumkin.</p>
+
+<a href="#qulayliklar" id="qulayliklar" style="color: inherit; text-decoration: none;">
+  <h2>Qulayliklar</h2>
+</a>
+<ul>
+<li>Standard birinchi darajali paketlarni izlash va qidirilgan paketlar haqida ma&#39;lumot olish</li>
+<li>AUR paketlarini izlash va istalgan paket haqida ma&#39;lumot olish</li>
+<li>(Keyinchalik yana ko&#39;p narsalar qo&#39;shish niyat qilingan)</li>
+</ul>
+<blockquote>
+<p>Bu proyekt hozir sinov bosqichidan o&#39;tmoqda. Agarda bironta xatolikka duchor
+bo&#39;lsangiz, xatolik haqida <a href="https://github.com/xinuxuz/xeorarch/issues/new">e&#39;lon</a>
+qoldirishni unutmang.</p>
+</blockquote>
+
+<a href="#o39rnatish" id="o39rnatish" style="color: inherit; text-decoration: none;">
+  <h2>O&#39;rnatish</h2>
+</a>
+<p>Istalgan node.js paket menejerini ishlatishingiz mumkin. Masalan, npm, yarn, pnpm... Misol:</p>
+<pre><code class="language-shell"><span class="hl-0">npm install xeorarch</span>
+</code></pre>
+
+<a href="#ishlatish-misol-tariqasida" id="ishlatish-misol-tariqasida" style="color: inherit; text-decoration: none;">
+  <h2>Ishlatish (Misol tariqasida)</h2>
+</a>
+<p>Hozircha typedocs orqali dokumentatsiya yozilmoqda...</p>
+<pre><code class="language-js"><span class="hl-0">(</span><span class="hl-1">async</span><span class="hl-0"> () </span><span class="hl-1">=&gt;</span><span class="hl-0"> {</span><br/><span class="hl-0">    </span><span class="hl-1">const</span><span class="hl-0"> </span><span class="hl-2">xeorarch</span><span class="hl-0"> = </span><span class="hl-3">require</span><span class="hl-0">(</span><span class="hl-4">&#39;xeorarch&#39;</span><span class="hl-0">)</span><br/><span class="hl-0">    </span><span class="hl-5">console</span><span class="hl-0">.</span><span class="hl-3">log</span><span class="hl-0">((</span><span class="hl-6">await</span><span class="hl-0"> </span><span class="hl-5">xeorarch</span><span class="hl-0">.</span><span class="hl-5">Search</span><span class="hl-0">.</span><span class="hl-3">search</span><span class="hl-0">(</span><span class="hl-4">&#39;linux&#39;</span><span class="hl-0">)).</span><span class="hl-3">slice</span><span class="hl-0">(</span><span class="hl-7">0</span><span class="hl-0">, </span><span class="hl-7">50</span><span class="hl-0">))</span><br/><span class="hl-0">})();</span>
+</code></pre>
+</div></div><div class="col-4 col-menu menu-sticky-wrap menu-highlight"><nav class="tsd-navigation primary"><ul><li class="current"><a href="modules.html">Exports</a></li><li class=" tsd-kind-namespace"><a href="modules/AUR.html">AUR</a></li><li class=" tsd-kind-namespace"><a href="modules/STD.html">STD</a></li><li class=" tsd-kind-namespace"><a href="modules/Search.html">Search</a></li></ul></nav><nav class="tsd-navigation secondary menu-sticky"><ul></ul></nav></div></div></div><footer class="with-border-bottom"><div class="container"><h2>Settings</h2><p>Theme <select id="theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></p></div></footer><div class="container tsd-generator"><p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div><div class="overlay"></div><script src="assets/main.js"></script></body></html>
