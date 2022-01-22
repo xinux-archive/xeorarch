@@ -1,6 +1,6 @@
 {
   "name": "xeorarch",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "Xinux jamiyati uchun yozilgan Archlinux SDK",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
