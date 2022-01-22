@@ -43,17 +43,6 @@ export interface PackageSearch {
 }
 
 /**
- * Get info about one package
- * @param name Packages to get info for
- * @exports
- */
-export const info = async (name: string): Promise<PackageInfo> => {
-    // Base AUR API URL
-    const url = `https://archlinux.org/packages/community/x86_64/${name}/json`
-    return await fetcher(url)
-}
-
-/**
  * Search for packages on STD
  * @param name The query to search for
  * @exports
@@ -61,6 +50,21 @@ export const info = async (name: string): Promise<PackageInfo> => {
 export const search = async (name: string): Promise<PackageSearch> => {
     // Base AUR API URL
     const url = `https://archlinux.org/packages/search/json/?q=${name}`
-    const request = await fetcher(url)
-    return request.results
+    return await fetcher(url)
+}
+
+/**
+ * Get info about one package
+ * @param arch Architecture of package
+ * @param name Packages to get info for
+ * @exports
+ */
+export const info = async (arch: string, name: string): Promise<PackageInfo | any[]> => {
+    // Base AUR API URL
+    const url = `https://archlinux.org/packages/${arch}/x86_64/${name}/json`
+    try {
+        return await fetcher(url)
+    } catch (_) {
+        return []
+    }
 }

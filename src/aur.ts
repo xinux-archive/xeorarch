@@ -82,7 +82,7 @@ export const search = async (
  * Get info about one or multiple packages
  * @param query Packages to get info for
  */
-export const info = async (query: string | string[]): Promise<AURInfo[]> => {
+export const info = async (query: string | string[]): Promise<AURInfo> => {
     if (typeof query === 'string') {
         query = [query]
     }
@@ -91,5 +91,5 @@ export const info = async (query: string | string[]): Promise<AURInfo[]> => {
         .map((pkg) => `&arg[]=${pkg}`)
         .join('')}`
     const response = await fetcher(url)
-    return response.results
+    return response.results[0]
 }

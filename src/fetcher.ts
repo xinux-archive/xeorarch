@@ -15,6 +15,6 @@ export default async (link: string | undefined): Promise<any> => {
         const response = await axios(link)
         return await response.data
     } catch (error) {
-        throw new Error('Error fetching data:')
+        throw new Error(`Error fetching data: ${error}`)
     }
 }
