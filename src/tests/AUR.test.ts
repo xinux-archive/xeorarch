@@ -39,8 +39,8 @@ test('Query Search', async () => {
 })
 
 test('Query Info', async () => {
-    const request = await AUR.info(['hello', 'world'])
-    const keys = Object.keys(request[0])
+    const request = await AUR.info(['hello', 'visual-studio-code-bin'])
+    const keys = Object.keys(request)
     const requirement = [
         'ID',
         'Name',
