@@ -1,5 +1,5 @@
 <header>
-<img src="assets/logo.svg" alt="logo" height="90" align="left">
+<img src="assets/logo.svg" alt="logo" height="100" align="left">
 <h1 style="display: inline">xinuxuz/xeorarch</h1>
 
 Archlinux Paketlar SDK menejeri
@@ -11,7 +11,7 @@ Archlinux Paketlar SDK menejeri
 [![Test CI](https://github.com/xinuxuz/xeorarch/actions/workflows/test.yml/badge.svg)](https://github.com/xinuxuz/xeorarch/actions/workflows/test.yml)
 </header>
 
-## Haqida...
+## Haqida
 
 Archlinux o'zining 'pacman' nomli shaxsiy paketlar menejeriga ega. Undan narsalar qidirish esa ikki usulda bajariladi. Birinichisi o'rnatilgan
 pacman paketlar menejerini kerakli argumentlar bilan chaqirish yordamida bo'lsa, ikkinchisi esa https://archlinux.org/packages/ yoki
