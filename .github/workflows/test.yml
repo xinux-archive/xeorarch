@@ -8,15 +8,17 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
-      - uses: pnpm/action-setup@v2.0.1
-      - name: Cache pnpm modules
+        with:
+          node-version: 16
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
       - uses: actions/cache@v2
         with:
-          path: ~/.pnpm-store
-          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: web-${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
-            ${{ runner.os }}-
-      - run: pnpm i --frozen-lockfile
-      - run: pnpm format-check
-      - run: pnpm lint
-      - run: pnpm test
+            web-${{ runner.os }}-yarn-
+      - run: yarn --frozen-lockfile
+      - run: yarn format:check
+      - run: yarn lint
