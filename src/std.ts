@@ -82,4 +82,4 @@ export const info = async (
     return response
 }
 
-export default { search, info}
+export default { search, info }

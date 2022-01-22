@@ -1,6 +1,6 @@
 <header>
-<img src="assets/logo.svg" alt="logo" height="100" align="left">
-<h1 style="display: inline">xinuxuz/xeorarch</h1>
+<img src="docs/assets/logo.svg" alt="logo" height="100" align="left">
+<h1 style="display: inline">Xeorarch</h1>
 
 Archlinux Paketlar SDK menejeri
 
@@ -39,6 +39,13 @@ Istalgan node.js paket menejerini ishlatishingiz mumkin. Masalan, npm, yarn, pnp
 npm install xeorarch
 ```
 
-## Ishlatish
+## Ishlatish (Misol tariqasida)
 
 Hozircha typedocs orqali dokumentatsiya yozilmoqda...
+
+```js
+(async () => {
+    const xeorarch = require('xeorarch')
+    console.log((await xeorarch.Search.search('linux')).slice(0, 50))
+})();
+```

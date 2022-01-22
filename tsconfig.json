@@ -26,7 +26,10 @@
   "include": ["./src/**/*.ts"],
   "exclude": ["node_modules", "**/tests/*"],
   "typedocOptions": {
+    "media": "docs/assets/",
+    "name": "Xeorarch",
+    "includeVersion": true,
     "entryPoints": ["src/index.ts"],
-    "out": "docs"
+    "out": "docs/build/"
   }
 }
