@@ -95,3 +95,5 @@ export const info = async (query: string | string[]): Promise<AURInfo[]> => {
     const response = await fetcher(url)
     return response.results
 }
+
+export default { search, info }

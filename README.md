@@ -30,3 +30,15 @@ chiqarishda ishlatishingiz mumkin.
 > Bu proyekt hozir sinov bosqichidan o'tmoqda. Agarda bironta xatolikka duchor
 > bo'lsangiz, xatolik haqida [e'lon](https://github.com/xinuxuz/xeorarch/issues/new)
 > qoldirishni unutmang.
+
+## O'rnatish
+
+Istalgan node.js paket menejerini ishlatishingiz mumkin. Masalan, npm, yarn, pnpm... Misol:
+
+```shell
+npm install xeorarch
+```
+
+## Ishlatish
+
+Hozircha typedocs orqali dokumentatsiya yozilmoqda...

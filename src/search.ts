@@ -1,6 +1,6 @@
 import Fuse from 'fuse.js'
-import * as STD from './std'
-import * as AUR from './aur'
+import STD from './std'
+import AUR from './aur'
 
 interface Package {
     name: string
