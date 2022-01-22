@@ -69,6 +69,7 @@ const baseUrl = 'https://aur.archlinux.org/rpc/?v=5'
  * Search for packages on AUR
  * @param query The query to search for
  * @param by The field to search by
+ * @exports
  */
 export const search = async (
     query: string,
@@ -81,8 +82,9 @@ export const search = async (
 /**
  * Get info about one or multiple packages
  * @param query Packages to get info for
+ * @exports
  */
-export const info = async (query: string | string[]): Promise<AURInfo> => {
+export const info = async (query: string | string[]): Promise<AURInfo[]> => {
     if (typeof query === 'string') {
         query = [query]
     }
@@ -91,5 +93,5 @@ export const info = async (query: string | string[]): Promise<AURInfo> => {
         .map((pkg) => `&arg[]=${pkg}`)
         .join('')}`
     const response = await fetcher(url)
-    return response.results[0]
+    return response.results
 }

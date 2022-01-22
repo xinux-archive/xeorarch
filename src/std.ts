@@ -35,6 +35,8 @@ export interface PackageInfo {
     checkdepends: string[]
 }
 
+type infoQuery = { arch: string; name: string }
+
 export interface PackageSearch {
     version: number
     limit: number
@@ -55,19 +57,27 @@ export const search = async (name: string): Promise<PackageSearch> => {
 
 /**
  * Get info about one package
- * @param arch Architecture of package
- * @param name Packages to get info for
+ * @param query Packages to get info for
  * @exports
  */
 export const info = async (
-    arch: string,
-    name: string
-): Promise<PackageInfo | any[]> => {
-    // Base AUR API URL
-    const url = `https://archlinux.org/packages/${arch}/x86_64/${name}/json`
-    try {
-        return await fetcher(url)
-    } catch (_) {
-        return []
+    query: infoQuery | infoQuery[]
+): Promise<PackageInfo[]> => {
+    const response: PackageInfo[] = []
+
+    if (!Array.isArray(query)) {
+        query = [query]
     }
+
+    for (const option of query) {
+        const url = `https://archlinux.org/packages/${option.arch}/x86_64/${option.name}/json`
+        try {
+            await fetcher(url).then((data) => {
+                response.push(data)
+            })
+        } catch {
+            // tslint:disable-next-line:no-empty
+        }
+    }
+    return response
 }

@@ -1,6 +1,7 @@
 import * as STD from '../std'
 
-test('Query Search', async () => {
+test('STD Query Search', async () => {
+    jest.setTimeout(10000)
     const request = await STD.search('linux')
 
     // Check for options
@@ -50,29 +51,40 @@ test('Query Search', async () => {
     }
 })
 
-// test('Query Info', async () => {
-//     const request = await AUR.info(['hello', 'world'])
-//     const keys = Object.keys(request[0])
-//     const requirement = [
-//         'ID',
-//         'Name',
-//         'PackageBaseID',
-//         'PackageBase',
-//         'Version',
-//         'Description',
-//         'URL',
-//         'NumVotes',
-//         'Popularity',
-//         'OutOfDate',
-//         'Maintainer',
-//         'FirstSubmitted',
-//         'LastModified',
-//         'URLPath',
-//         'License',
-//         'Keywords'
-//     ]
-//
-//     for (const req of requirement) {
-//         expect(keys).toContain(req)
-//     }
-// })
+test('STD Query Info', async () => {
+    const request = await STD.info([{ arch: 'core', name: 'linux' }])
+    const keys = Object.keys(request[0])
+
+    const requirement = [
+        'pkgname',
+        'pkgbase',
+        'repo',
+        'arch',
+        'pkgver',
+        'pkgrel',
+        'epoch',
+        'pkgdesc',
+        'url',
+        'filename',
+        'compressed_size',
+        'installed_size',
+        'build_date',
+        'last_update',
+        'flag_date',
+        'maintainers',
+        'packager',
+        'groups',
+        'licenses',
+        'conflicts',
+        'provides',
+        'replaces',
+        'depends',
+        'optdepends',
+        'makedepends',
+        'checkdepends'
+    ]
+
+    for (const req of requirement) {
+        expect(keys).toContain(req)
+    }
+})

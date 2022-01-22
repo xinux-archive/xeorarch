@@ -13,13 +13,14 @@ interface Package {
     url: string
     author: string | string[]
     updated: string | Date | number
+    install: string
 }
 
 const options = {
     keys: ['name', 'base', 'desc']
 }
 
-export const search = async (pack: string) => {
+export const search = async (pack: string): Promise<Package[]> => {
     const std = (await STD.search(pack)).results.map(
         (packs): Package => ({
             name: packs.pkgname,
@@ -31,7 +32,8 @@ export const search = async (pack: string) => {
             version: packs.pkgver,
             url: packs.url,
             author: packs.maintainers,
-            updated: new Date(packs.last_update).toLocaleString()
+            updated: new Date(packs.last_update).toLocaleString(),
+            install: `sudo pacman -S ${packs.pkgname}`
         })
     )
     const aur = (await AUR.search(pack)).results.map(
@@ -44,7 +46,8 @@ export const search = async (pack: string) => {
             version: packs.Version,
             url: packs.URL,
             author: packs.Maintainer,
-            updated: new Date(packs.LastModified * 1000).toLocaleString()
+            updated: new Date(packs.LastModified * 1000).toLocaleString(),
+            install: `&lt;yay|paru|pacaur&gt; -S ${packs.Name}`
         })
     )
 

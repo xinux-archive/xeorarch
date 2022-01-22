@@ -1,6 +1,7 @@
 import * as AUR from '../aur'
 
-test('Query Search', async () => {
+test('AUR Query Search', async () => {
+    jest.setTimeout(10000)
     const request = await AUR.search('hello')
 
     // Check for options
@@ -38,9 +39,10 @@ test('Query Search', async () => {
     }
 })
 
-test('Query Info', async () => {
-    const request = await AUR.info(['hello', 'visual-studio-code-bin'])
-    const keys = Object.keys(request)
+test('AUR Query Info', async () => {
+    const request = await AUR.info('hello')
+
+    const keys = Object.keys(request[0])
     const requirement = [
         'ID',
         'Name',
