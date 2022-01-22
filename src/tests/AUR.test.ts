@@ -1,7 +1,6 @@
 import * as AUR from '../aur'
 
 test('AUR Query Search', async () => {
-    jest.setTimeout(10000)
     const request = await AUR.search('hello')
 
     // Check for options

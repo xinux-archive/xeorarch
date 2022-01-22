@@ -1,7 +1,8 @@
 import * as STD from '../std'
 
 test('STD Query Search', async () => {
-    jest.setTimeout(10000)
+    jest.setTimeout(50000)
+
     const request = await STD.search('linux')
 
     // Check for options

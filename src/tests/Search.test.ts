@@ -1,7 +1,8 @@
 import * as Search from '../search'
 
 test('Query Search', async () => {
-    jest.setTimeout(10000)
+    jest.setTimeout(50000)
+
     const request = await Search.search('linux')
 
     // Check for packages to have required keys
