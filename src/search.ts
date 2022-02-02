@@ -2,7 +2,7 @@ import Fuse from 'fuse.js'
 import STD from './std'
 import AUR from './aur'
 
-interface Package {
+export interface Package {
     name: string
     base: string
     desc: string
