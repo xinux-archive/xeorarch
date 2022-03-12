@@ -1,24 +1,24 @@
 {
-  "$schema": "https://x.nest.land/eggs@0.3.10/src/schema.json",
-  "name": "xeorarch",
-  "entry": "./src/mod.ts",
-  "description": "Xinux Jamiyati uchun yozilgan Archlinux SDK",
-  "homepage": "https://github.com/xinuxuz/xeorarch",
-  "version": "1.9.0",
-  "releaseType": null,
-  "unstable": false,
-  "unlisted": false,
-  "files": [
-    "./README.md",
-    "./src/**/*"
-  ],
-  "ignore": [
-    ".git",
-    ".github",
-    "lib"
-  ],
-  "checkFormat": "deno fmt --config deno.json",
-  "checkTests": "deno lint --config deno.json",
-  "checkInstallation": true,
-  "check": true
+    "$schema": "https://x.nest.land/eggs@0.3.10/src/schema.json",
+    "name": "xeorarch",
+    "entry": "./src/mod.ts",
+    "description": "Xinux Jamiyati uchun yozilgan Archlinux SDK",
+    "homepage": "https://github.com/xinuxuz/xeorarch",
+    "version": "1.9.0",
+    "releaseType": null,
+    "unstable": false,
+    "unlisted": false,
+    "files": [
+        "./README.md",
+        "./src/**/*"
+    ],
+    "ignore": [
+        ".git",
+        ".github",
+        "lib"
+    ],
+    "checkFormat": "deno fmt --config deno.json",
+    "checkTests": "deno lint --config deno.json",
+    "checkInstallation": true,
+    "check": true
 }
