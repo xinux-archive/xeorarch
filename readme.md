@@ -1,5 +1,5 @@
 <header>
-<img src="https://raw.githubusercontent.com/xinuxuz/xeorarch/main/docs/assets/logo.svg" alt="logo" height="100" align="left">
+<img src="https://raw.githubusercontent.com/xinuxuz/website/main/src/images/logo.svg" alt="logo" height="100" align="left">
 <h1 style="display: inline">Xeorarch</h1>
 
 Archlinux Paketlar SDK menejeri

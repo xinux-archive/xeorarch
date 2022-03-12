@@ -5,11 +5,12 @@
     "main": "lib/mod.js",
     "types": "lib/mod.d.ts",
     "scripts": {
-        "try": "node src/apin.js",
+        "try": "node ./api.js && deno run --allow-all api.ts",
         "cache": "deno cache src/mod.ts",
         "format": "deno fmt --config deno.json",
         "format:check": "deno fmt --check --config deno.json",
         "lint": "deno lint --config deno.json",
+        "test": "deno test",
         "prepare": "npm run backport",
         "backport": "deno2node tsconfig.json",
         "prepublishOnly": "npm test && npm run lint",

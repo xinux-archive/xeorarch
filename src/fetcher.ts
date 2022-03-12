@@ -1,9 +1,4 @@
-/**
- * Jest is suffering with imports from node-fetch
- * https://github.com/node-fetch/node-fetch/issues/1289
- */
-// const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
-
+// deno-lint-ignore-file no-explicit-any
 export default async (link: string | undefined): Promise<any> => {
     if (!link) {
         throw new Error("No link provided");

@@ -1,4 +1,5 @@
-import { cheerio } from "./platform.node.ts";
+// deno-lint-ignore-file no-explicit-any
+import { cheerio } from "./platform.deno.ts";
 
 export interface Groups {
     arch: string;
@@ -30,8 +31,8 @@ export interface ListGroup {
  * @exports
  */
 export const groups = async (cursor = 1, limit = 10): Promise<ListGroup[]> => {
-    return await fetch("https://archlinux.org/groups/").then((r) => {
-        const page = cheerio.load(r.body);
+    return await fetch("https://archlinux.org/groups/").then(async (r) => {
+        const page = cheerio.load(await r.text());
         const table = page("#content > div.box > table > tbody");
 
         const groupsData = table.children("tr").map((_: number, el: any) => {
@@ -44,7 +45,10 @@ export const groups = async (cursor = 1, limit = 10): Promise<ListGroup[]> => {
             };
         });
 
-        return groupsData.get().slice((cursor - 1) * limit, cursor * limit);
+        return groupsData.get<ListGroup>().slice(
+            (cursor - 1) * limit,
+            cursor * limit,
+        );
     });
 };
 /**
@@ -54,8 +58,8 @@ export const groups = async (cursor = 1, limit = 10): Promise<ListGroup[]> => {
  */
 export const group = async (name: string, arch = "x86_64"): Promise<Groups> => {
     return await fetch(`https://archlinux.org/groups/${arch}/${name}/`)
-        .then((r) => {
-            const page = cheerio.load(r.body);
+        .then(async (r) => {
+            const page = cheerio.load(await r.text());
             const table = page("#content > div.box > table > tbody");
 
             const groupsData: Package[] = table

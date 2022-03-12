@@ -1,4 +1,7 @@
 {
+    "compilerOptions": {
+        "noImplicitReturns": true
+    },
     "fmt": {
         "options": {
             "indentWidth": 4,

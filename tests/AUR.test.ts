@@ -32,8 +32,10 @@ Deno.test("AUR Query Search", async () => {
 
     for (const packer of packages) {
         const keys = Object.keys(packer);
-        for (const req of requiredPacks) {
-            expect(keys).toContain(req);
+        for (const key of keys) {
+            if (!requiredPacks.includes(key)) {
+                throw new Error("Error with types");
+            }
         }
     }
 });
