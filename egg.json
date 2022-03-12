@@ -4,8 +4,8 @@
   "entry": "./src/mod.ts",
   "description": "Xinux Jamiyati uchun yozilgan Archlinux SDK",
   "homepage": "https://github.com/xinuxuz/xeorarch",
-  "version": "1.8.8",
-  "releaseType": "patch",
+  "version": "1.9.0",
+  "releaseType": null,
   "unstable": false,
   "unlisted": false,
   "files": [
