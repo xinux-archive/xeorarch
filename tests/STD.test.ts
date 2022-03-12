@@ -1,21 +1,28 @@
 import * as STD from "../src/std.ts";
 
-test("STD Query Search", async () => {
-    jest.setTimeout(50000);
-
+Deno.test("STD Query Search", async () => {
     const request = await STD.search("linux");
 
     // Check for options
-    const options = Object.keys(request);
-    const requiredOptions = ["version", "limit", "valid", "results"];
+    const keys = Object.keys(request);
+    const options = [
+        "version",
+        "limit",
+        "valid",
+        "results",
+        "num_pages",
+        "page",
+    ];
 
-    for (const req of requiredOptions) {
-        expect(options).toContain(req);
+    for (const key of keys) {
+        if (!options.includes(key)) {
+            throw new Error("Doesn't include required object");
+        }
     }
 
     // Check for packages to have required keys
     const packages = request.results;
-    const requiredPacks = [
+    const options2 = [
         "pkgname",
         "pkgbase",
         "repo",
@@ -46,17 +53,19 @@ test("STD Query Search", async () => {
 
     for (const packer of packages) {
         const keys = Object.keys(packer);
-        for (const req of requiredPacks) {
-            expect(keys).toContain(req);
+        for (const key of keys) {
+            if (!options2.includes(key)) {
+                throw new Error("Doesn't include required object");
+            }
         }
     }
 });
 
-test("STD Query Info", async () => {
+Deno.test("STD Query Info", async () => {
     const request = await STD.info([{ arch: "core", name: "linux" }]);
     const keys = Object.keys(request[0]);
 
-    const requirement = [
+    const options = [
         "pkgname",
         "pkgbase",
         "repo",
@@ -85,7 +94,9 @@ test("STD Query Info", async () => {
         "checkdepends",
     ];
 
-    for (const req of requirement) {
-        expect(keys).toContain(req);
+    for (const key of keys) {
+        if (!options.includes(key)) {
+            throw new Error("Given objects don't exist on json");
+        }
     }
 });

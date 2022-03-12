@@ -9,7 +9,7 @@
         "format": "deno fmt --config deno.json",
         "format:check": "deno fmt --check --config deno.json",
         "lint": "deno lint --config deno.json",
-        "test": "deno test",
+        "test": "deno test --allow-all",
         "prepare": "npm run backport",
         "backport": "deno2node tsconfig.json",
         "prepublishOnly": "npm test && npm run lint",

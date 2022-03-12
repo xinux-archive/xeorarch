@@ -1,14 +1,15 @@
 import * as Search from "../src/search.ts";
 
-test("Query Search", async () => {
+Deno.test("Query Search", async () => {
     const request = await Search.search("linux");
 
     // Check for packages to have required keys
-    const requiredPacks = [
+    const options = [
         "name",
         "base",
         "desc",
         "arch",
+        "repo",
         "type",
         "version",
         "url",
@@ -19,8 +20,10 @@ test("Query Search", async () => {
 
     for (const packer of request) {
         const keys = Object.keys(packer);
-        for (const req of requiredPacks) {
-            expect(keys).toContain(req);
+        for (const key of keys) {
+            if (!options.includes(key)) {
+                throw new Error("Doesn't include required object");
+            }
         }
     }
 });

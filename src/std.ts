@@ -42,6 +42,8 @@ export interface PackageSearch {
     limit: number;
     valid: boolean;
     results: PackageInfo[];
+    num_pages: number;
+    page: number;
 }
 
 /**

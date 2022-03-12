@@ -4,16 +4,18 @@ Deno.test("AUR Query Search", async () => {
     const request = await AUR.search("hello");
 
     // Check for options
-    const options = Object.keys(request);
-    const requiredOptions = ["version", "type", "resultcount", "results"];
+    const keys = Object.keys(request);
+    const options = ["version", "type", "resultcount", "results"];
 
-    for (const req of requiredOptions) {
-        expect(options).toContain(req);
+    for (const key of keys) {
+        if (!options.includes(key)) {
+            throw new Error("Given objects don't exist on json");
+        }
     }
 
     // Check for packages to have required keys
     const packages = request.results;
-    const requiredPacks = [
+    const options2 = [
         "ID",
         "Name",
         "PackageBaseID",
@@ -33,7 +35,7 @@ Deno.test("AUR Query Search", async () => {
     for (const packer of packages) {
         const keys = Object.keys(packer);
         for (const key of keys) {
-            if (!requiredPacks.includes(key)) {
+            if (!options2.includes(key)) {
                 throw new Error("Error with types");
             }
         }
@@ -44,7 +46,7 @@ Deno.test("AUR Query Info", async () => {
     const request = await AUR.info("hello");
 
     const keys = Object.keys(request[0]);
-    const requirement = [
+    const options = [
         "ID",
         "Name",
         "PackageBaseID",
@@ -63,7 +65,9 @@ Deno.test("AUR Query Info", async () => {
         "Keywords",
     ];
 
-    for (const req of requirement) {
-        expect(keys).toContain(req);
+    for (const key of keys) {
+        if (!options.includes(key)) {
+            throw new Error("Error with types");
+        }
     }
 });

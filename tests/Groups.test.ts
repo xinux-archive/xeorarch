@@ -1,30 +1,34 @@
 import * as Groups from "../src/groups.ts";
 
-test("Groups Query", async () => {
+Deno.test("Groups Query", async () => {
     const request = await Groups.groups();
 
     const keys = Object.keys(request[0]);
-    const requirement = ["arch", "name", "packs", "update"];
+    const options = ["arch", "name", "packs", "update"];
 
-    for (const req of requirement) {
-        expect(keys).toContain(req);
+    for (const key of keys) {
+        if (!options.includes(key)) {
+            throw new Error("Doesn't include required object");
+        }
     }
 });
 
-test("Group Query", async () => {
+Deno.test("Group Query", async () => {
     const request = await Groups.group("alsa");
 
     // Check for options
-    const main = Object.keys(request);
-    const requiredOptions = ["arch", "name", "packs"];
+    const keys = Object.keys(request);
+    const options = ["arch", "name", "packs"];
 
-    for (const req of requiredOptions) {
-        expect(main).toContain(req);
+    for (const key of keys) {
+        if (!options.includes(key)) {
+            throw new Error("Doesn't include required object");
+        }
     }
 
     // Check for packages to have required keys
     const packages = request.packs;
-    const requiredPacks = [
+    const options2 = [
         "arch",
         "repo",
         "name",
@@ -36,8 +40,10 @@ test("Group Query", async () => {
 
     for (const packer of packages) {
         const keys = Object.keys(packer);
-        for (const req of requiredPacks) {
-            expect(keys).toContain(req);
+        for (const key of keys) {
+            if (!options2.includes(key)) {
+                throw new Error("Doesn't include required object");
+            }
         }
     }
 });
