@@ -1,6 +1,6 @@
 {
     "name": "xeorarch",
-    "version": "1.8.5",
+    "version": "1.8.6",
     "description": "Xinux jamiyati uchun yozilgan Archlinux SDK",
     "main": "lib/mod.js",
     "types": "lib/mod.d.ts",
