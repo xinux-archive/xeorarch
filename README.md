@@ -37,11 +37,13 @@ chiqarishda ishlatishingiz mumkin.
 Istalgan node.js paket menejerini ishlatishingiz mumkin. Masalan, npm, yarn, pnpm... Misol:
 
 ### Node
+
 ```shell
 npm install xeorarch
 ```
 
 ### Deno (deps.ts ichida)
+
 ```typescript
 export * as xeorarch from "https://x.nest.land/xeorarch@1.8.4/src/mod.ts";
 ```
@@ -49,6 +51,7 @@ export * as xeorarch from "https://x.nest.land/xeorarch@1.8.4/src/mod.ts";
 ## Ishlatish (Misol tariqasida)
 
 ## Node
+
 ```javascript
 (async () => {
     const xeorarch = require("xeorarch");
@@ -57,9 +60,10 @@ export * as xeorarch from "https://x.nest.land/xeorarch@1.8.4/src/mod.ts";
 ```
 
 ## Deno
+
 ```typescript
 import { xeorarch } from "./deps.ts";
 
-const search = await xeorarch.Search.search("linux")
-console.log(search)
+const search = await xeorarch.Search.search("linux");
+console.log(search);
 ```
