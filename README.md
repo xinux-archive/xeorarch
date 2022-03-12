@@ -45,7 +45,7 @@ npm install xeorarch
 ### Deno (deps.ts ichida)
 
 ```typescript
-export * as xeorarch from "https://x.nest.land/xeorarch@1.8.4/src/mod.ts";
+export * as xeorarch from "https://x.nest.land/xeorarch@2.0.0/src/mod.ts";
 ```
 
 ## Ishlatish (Misol tariqasida)
