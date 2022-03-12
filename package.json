@@ -12,8 +12,6 @@
         "test": "deno test --allow-all",
         "prepare": "npm run backport",
         "backport": "deno2node tsconfig.json",
-        "prepublishOnly": "npm test && npm run lint",
-        "version": "npm run format && git add -A src",
         "postversion": "git push && git push --tags"
     },
     "files": [
