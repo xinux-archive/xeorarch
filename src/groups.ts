@@ -1,27 +1,26 @@
-import axios from 'axios'
-import cheerio from 'cheerio'
+import { cheerio } from "./platform.node.ts";
 
 export interface Groups {
-    arch: string
-    name: string
-    packs: Package[]
+    arch: string;
+    name: string;
+    packs: Package[];
 }
 
 export interface Package {
-    arch: string
-    repo: string
-    name: string
-    version: string
-    desc: string
-    updated: string
-    flag: string
+    arch: string;
+    repo: string;
+    name: string;
+    version: string;
+    desc: string;
+    updated: string;
+    flag: string;
 }
 
 export interface ListGroup {
-    arch: string
-    name: string
-    packs: string
-    update: string
+    arch: string;
+    name: string;
+    packs: string;
+    update: string;
 }
 
 /**
@@ -31,55 +30,54 @@ export interface ListGroup {
  * @exports
  */
 export const groups = async (cursor = 1, limit = 10): Promise<ListGroup[]> => {
-    return await axios.get('https://archlinux.org/groups/').then((r) => {
-        const page = cheerio.load(r.data)
-        const table = page('#content > div.box > table > tbody')
+    return await fetch("https://archlinux.org/groups/").then((r) => {
+        const page = cheerio.load(r.body);
+        const table = page("#content > div.box > table > tbody");
 
-        const groupsData = table.children('tr').map((_, el) => {
-            const select = cheerio.load(el)
+        const groupsData = table.children("tr").map((_: number, el: any) => {
+            const select = cheerio.load(el);
             return {
-                arch: select('td:nth-child(1)').text(),
-                name: select('td:nth-child(2) > a').text(),
-                packs: select('td:nth-child(3)').text(),
-                update: select('td:nth-child(4)').text()
-            }
-        })
+                arch: select("td:nth-child(1)").text(),
+                name: select("td:nth-child(2) > a").text(),
+                packs: select("td:nth-child(3)").text(),
+                update: select("td:nth-child(4)").text(),
+            };
+        });
 
-        return groupsData.get().slice((cursor - 1) * limit, cursor * limit)
-    })
-}
+        return groupsData.get().slice((cursor - 1) * limit, cursor * limit);
+    });
+};
 /**
  * Get information about a group of packages
  * @param name name of group
  * @param arch aarch of group
  */
-export const group = async (name: string, arch = 'x86_64'): Promise<Groups> => {
-    return await axios
-        .get(`https://archlinux.org/groups/${arch}/${name}/`)
+export const group = async (name: string, arch = "x86_64"): Promise<Groups> => {
+    return await fetch(`https://archlinux.org/groups/${arch}/${name}/`)
         .then((r) => {
-            const page = cheerio.load(r.data)
-            const table = page('#content > div.box > table > tbody')
+            const page = cheerio.load(r.body);
+            const table = page("#content > div.box > table > tbody");
 
             const groupsData: Package[] = table
-                .children('tr')
-                .map((_, el) => {
-                    const select = cheerio.load(el)
+                .children("tr")
+                .map((_: number, el: any) => {
+                    const select = cheerio.load(el);
                     return {
-                        arch: select('td:nth-child(1)').text(),
-                        repo: select('td:nth-child(2)').text(),
-                        name: select('td:nth-child(3)').text(),
-                        version: select('td:nth-child(4)').text(),
-                        desc: select('td:nth-child(5)').text(),
-                        updated: select('td:nth-child(6)').text(),
-                        flag: select('td:nth-child(7)').text()
-                    }
+                        arch: select("td:nth-child(1)").text(),
+                        repo: select("td:nth-child(2)").text(),
+                        name: select("td:nth-child(3)").text(),
+                        version: select("td:nth-child(4)").text(),
+                        desc: select("td:nth-child(5)").text(),
+                        updated: select("td:nth-child(6)").text(),
+                        flag: select("td:nth-child(7)").text(),
+                    };
                 })
-                .get()
+                .get();
 
             return {
                 arch,
                 name,
-                packs: groupsData
-            }
-        })
-}
+                packs: groupsData,
+            };
+        });
+};

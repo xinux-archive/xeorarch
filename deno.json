@@ -1,0 +1,24 @@
+{
+    "fmt": {
+        "options": {
+            "indentWidth": 4,
+            "proseWrap": "preserve"
+        },
+        "files": {
+            "exclude": [
+                "./node_modules/",
+                "./lib/",
+                "./pnpm-lock.yaml"
+            ]
+        }
+    },
+    "lint": {
+        "files": {
+            "exclude": [
+                "./node_modules/",
+                "./lib/",
+                "./pnpm-lock.yaml"
+            ]
+        }
+    }
+}

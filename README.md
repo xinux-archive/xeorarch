@@ -9,6 +9,7 @@ Archlinux Paketlar SDK menejeri
 [![GitHub top language](https://img.shields.io/github/languages/top/xinuxuz/xeorarch?style=flat-square&logo=github)](https://github.com/xinuxuz/xeorarch)
 [![Chat](https://img.shields.io/badge/Chat-grey?style=flat-square&logo=telegram)](https://t.me/xinuxuz)
 [![Test CI](https://github.com/xinuxuz/xeorarch/actions/workflows/test.yml/badge.svg)](https://github.com/xinuxuz/xeorarch/actions/workflows/test.yml)
+
 </header>
 
 ## Haqida
@@ -16,7 +17,7 @@ Archlinux Paketlar SDK menejeri
 Archlinux o'zining 'pacman' nomli shaxsiy paketlar menejeriga ega. Undan narsalar qidirish esa ikki usulda bajariladi. Birinichisi o'rnatilgan
 pacman paketlar menejerini kerakli argumentlar bilan chaqirish yordamida bo'lsa, ikkinchisi esa https://archlinux.org/packages/ yoki
 https://aur.archlinux.org/ tashrif buyurgan holda kalit so'zlarini kiritib izlash yordamidadir va bu ba'zi jihatdan noqulaydir. Shu jumladan,
-qolgan yangiliklar, o'zgarishlar va boshqa shunday informatsiyalar olish noqulay bo'lgani sababli, biz, Xinux jamiyati, Archlinux turkumini 
+qolgan yangiliklar, o'zgarishlar va boshqa shunday informatsiyalar olish noqulay bo'lgani sababli, biz, Xinux jamiyati, Archlinux turkumini
 yoqtiruvchi community sifatida ushbu distributiv uchun TypeScript/JavaScript da SDK yozishga qaror qildik va ushbu paketni ishlab chiqdik.
 Ushbu paket yordamida siz biz yozgan qisqartmalar yordamida informatsiyalar tezda qo'lga kiritib, ularni o'zingizning mahsulotingiz ishlab
 chiqarishda ishlatishingiz mumkin.
@@ -45,7 +46,7 @@ Hozircha typedocs orqali dokumentatsiya yozilmoqda...
 
 ```js
 (async () => {
-    const xeorarch = require('xeorarch')
-    console.log((await xeorarch.Search.search('linux')).slice(0, 50))
+    const xeorarch = require("xeorarch");
+    console.log((await xeorarch.Search.search("linux")).slice(0, 50));
 })();
 ```

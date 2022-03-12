@@ -1,5 +1,3 @@
-import axios from 'axios'
-
 /**
  * Jest is suffering with imports from node-fetch
  * https://github.com/node-fetch/node-fetch/issues/1289
@@ -8,13 +6,13 @@ import axios from 'axios'
 
 export default async (link: string | undefined): Promise<any> => {
     if (!link) {
-        throw new Error('No link provided')
+        throw new Error("No link provided");
     }
 
     try {
-        const response = await axios(link)
-        return await response.data
+        const response = await fetch(link);
+        return await response.json();
     } catch (error) {
-        throw new Error(`Error fetching data: ${error}`)
+        throw new Error(`Error fetching data: ${error}`);
     }
-}
+};
