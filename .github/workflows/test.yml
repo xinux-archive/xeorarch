@@ -1,26 +1,24 @@
 name: Test CI
 
-on: [push, pull_request]
+on: [push, pull_request, pull_request_review]
 
 jobs:
-  web:
+  lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - name: Clone repository
+        uses: actions/checkout@v2
         with:
-          node-version: 16
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-      - uses: actions/cache@v2
+          submodules: false
+          persist-credentials: false
+
+      - name: Set up Deno
+        uses: denoland/setup-deno@v1
         with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: web-${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            web-${{ runner.os }}-yarn-
-      - run: yarn --frozen-lockfile
-      - run: yarn format:check
-      - run: yarn lint
-      - run: yarn build
-      - run: yarn test
+          deno-version: vx.x.x
+
+      - name: Format
+        run: deno fmt --check --config deno.json
+
+      - name: Lint
+        run: deno lint --config deno.json
