@@ -36,17 +36,30 @@ chiqarishda ishlatishingiz mumkin.
 
 Istalgan node.js paket menejerini ishlatishingiz mumkin. Masalan, npm, yarn, pnpm... Misol:
 
+### Node
 ```shell
 npm install xeorarch
 ```
 
+### Deno (deps.ts ichida)
+```typescript
+export * as xeorarch from "https://x.nest.land/xeorarch@1.8.4/src/mod.ts";
+```
+
 ## Ishlatish (Misol tariqasida)
 
-Hozircha typedocs orqali dokumentatsiya yozilmoqda...
-
-```js
+## Node
+```javascript
 (async () => {
     const xeorarch = require("xeorarch");
     console.log((await xeorarch.Search.search("linux")).slice(0, 50));
 })();
+```
+
+## Deno
+```typescript
+import { xeorarch } from "./deps.ts";
+
+const search = await xeorarch.Search.search("linux")
+console.log(search)
 ```

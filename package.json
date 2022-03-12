@@ -1,11 +1,10 @@
 {
     "name": "xeorarch",
-    "version": "1.8.3",
+    "version": "1.8.5",
     "description": "Xinux jamiyati uchun yozilgan Archlinux SDK",
     "main": "lib/mod.js",
     "types": "lib/mod.d.ts",
     "scripts": {
-        "try": "node ./api.js && deno run --allow-all api.ts",
         "cache": "deno cache src/mod.ts",
         "format": "deno fmt --config deno.json",
         "format:check": "deno fmt --check --config deno.json",
