@@ -4,22 +4,17 @@
   "entry": "./src/mod.ts",
   "description": "Xinux Jamiyati uchun yozilgan Archlinux SDK",
   "homepage": "https://github.com/xinuxuz/xeorarch",
-  "version": "1.8.2",
-  "releaseType": null,
+  "version": "1.8.3",
+  "releaseType": "patch",
   "unstable": false,
   "unlisted": false,
   "files": [
     "./README.md",
-    "./src/aur.ts",
-    "./src/fetcher.ts",
-    "./src/groups.ts",
-    "./src/platform.deno.ts",
-    "./src/search.ts",
-    "./src/std.ts"
+    "./src/**/*"
   ],
   "ignore": [".git", ".github", "lib"],
-  "checkFormat": false,
+  "checkFormat": "deno fmt --config deno.json",
   "checkTests": "deno lint --config deno.json",
-  "checkInstallation": false,
+  "checkInstallation": true,
   "check": true
 }
