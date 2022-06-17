@@ -1,4 +1,4 @@
-// deno-lint-ignore-file no-explicit-anyde
+// deno-lint-ignore-file no-explicit-any
 export const responses = {
     yes: "Ha",
     no: "Yo'q",
