@@ -4,11 +4,10 @@
 
 Archlinux Paketlar SDK menejeri
 
-[![Version](https://img.shields.io/badge/API-v1.6.1-f36caf.svg?style=flat-square)](https://core.telegram.org/bots/api)
 [![install size](https://flat.badgen.net/packagephobia/install/xeorarch)](https://packagephobia.com/result?p=xeorarch)
-[![GitHub top language](https://img.shields.io/github/languages/top/xinuxuz/xeorarch?style=flat-square&logo=github)](https://github.com/xinuxuz/xeorarch)
+[![GitHub top language](https://img.shields.io/github/languages/top/uzinfocom-org/xeorarch?style=flat-square&logo=github)](https://github.com/uzinfocom-org/xeorarch)
 [![Chat](https://img.shields.io/badge/Chat-grey?style=flat-square&logo=telegram)](https://t.me/xinuxuz)
-[![Test CI](https://github.com/xinuxuz/xeorarch/actions/workflows/test.yml/badge.svg)](https://github.com/xinuxuz/xeorarch/actions/workflows/test.yml)
+[![Test CI](https://github.com/uzinfocom-org/xeorarch/actions/workflows/test.yml/badge.svg)](https://github.com/uzinfocom-org/xeorarch/actions/workflows/test.yml)
 
 </header>
 
@@ -29,7 +28,7 @@ chiqarishda ishlatishingiz mumkin.
 - (Keyinchalik yana ko'p narsalar qo'shish niyat qilingan)
 
 > Bu proyekt hozir sinov bosqichidan o'tmoqda. Agarda bironta xatolikka duchor
-> bo'lsangiz, xatolik haqida [e'lon](https://github.com/xinuxuz/xeorarch/issues/new)
+> bo'lsangiz, xatolik haqida [e'lon](https://github.com/uzinfocom-org/xeorarch/issues/new)
 > qoldirishni unutmang.
 
 ## O'rnatish
@@ -45,7 +44,7 @@ npm install xeorarch
 ### Deno (deps.ts ichida)
 
 ```typescript
-export * as xeorarch from "https://x.nest.land/xeorarch@2.0.0/src/mod.ts";
+export * as xeorarchx from "https://deno.land/x/xeorarchx@v2.1.0/mod.ts";
 ```
 
 ## Ishlatish (Misol tariqasida)
@@ -54,7 +53,7 @@ export * as xeorarch from "https://x.nest.land/xeorarch@2.0.0/src/mod.ts";
 
 ```javascript
 (async () => {
-    const xeorarch = require("xeorarch");
+    const xeorarch = require("xea.ts");
     console.log((await xeorarch.Search.search("linux")).slice(0, 50));
 })();
 ```

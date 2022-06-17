@@ -1,6 +1,6 @@
 {
     "name": "xeorarch",
-    "version": "2.0.0",
+    "version": "2.1.0",
     "description": "Xinux jamiyati uchun yozilgan Archlinux SDK",
     "main": "lib/mod.js",
     "types": "lib/mod.d.ts",
@@ -27,12 +27,12 @@
     "license": " Apache-2.0",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/xinuxuz/xeorarch.git"
+        "url": "git+https://github.com/uzinfocom-org/xeorarch.git"
     },
     "bugs": {
-        "url": "https://github.com/xinuxuz/xeorarch/issues"
+        "url": "https://github.com/uzinfocom-org/xeorarch/issues"
     },
-    "homepage": "https://github.com/xinuxuz/xeorarch#readme",
+    "homepage": "https://github.com/uzinfocom-org/xeorarch#readme",
     "devDependencies": {
         "@types/node": "^12.20.47",
         "@types/node-fetch": "^2.6.1",
