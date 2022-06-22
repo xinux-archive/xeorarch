@@ -1,5 +1,5 @@
 // deno-lint-ignore-file no-explicit-any
-import { cheerio } from "./platform.deno.ts";
+import { cheerio } from "../src/platform.deno.ts";
 
 export interface Groups {
     arch: string;
