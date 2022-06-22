@@ -6,7 +6,7 @@ ${app.description}
 ${app.author}
 
 ISHLATILISHI:
-    ${app.name} [TUR] [KALIT]
+    xea [TUR] [KALIT]
 
 TANLOVLAR:
     help              Yordamchi habarni oynada ko'rsatish

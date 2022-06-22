@@ -16,10 +16,9 @@ export const wrapper = async () => {
             parsed.keys
                 ? parsed.keys.map(async (pack): Promise<void> => {
                     const search = await Both(pack);
-                    search.map((p) => p.name);
                     console.log(
-                        "Topilgan yaqin natijalar:",
-                        search.join(shortcuts.divider),
+                        "Topilgan yaqin natijalar:\n",
+                        search.map(p => p.name).slice(0, 20).join(shortcuts.list),
                     );
                 })
                 : console.log(colors.red("Ka'lit so'zlari kiritilmadi!"));
@@ -27,14 +26,17 @@ export const wrapper = async () => {
         case "info":
             parsed.keys
                 ? parsed.keys.map(async (pack): Promise<void> => {
-                    const search = await Both(pack);
-                    search.map((p) => {
-                        console.log(both(p));
-                    });
+                    const search = (await Both(pack));
+
+                    if (search[0]) {
+                        console.log(both(search[0]));
+                    } else {
+                        console.log("Ushbu kalit so'zi bo'yicha paket topilmadi!")
+                    }
                 })
                 : console.log(colors.red("Ka'lit so'zlari kiritilmadi!"));
             break;
         default:
-            console.error(colors.red("Invalid command"));
+            console.error(colors.red("Noto'g'ri komanda! \"xea help\" ishga tushuring ko'proq ma'lumotlar uchun"));
     }
 };

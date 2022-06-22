@@ -49,16 +49,16 @@ export const aur = (pack: AUR) =>
 export const both = (pack: Both) =>
     createOutput({
         "Ismi": pack.name,
-        "": pack.base,
+        "Alternativ": pack.base,
         "Ma'lumot": pack.desc,
         "Arxitektura": pack.arch,
         "Daraja": pack.repo ? pack.repo : responses.notFound,
         "Turi": pack.type,
         "Versiya": pack.version.toString(),
         "URL": pack.url,
-        "Muallif": typeof pack.author === "string"
-            ? pack.author
-            : pack.author.join(shortcuts.divider),
+        "Muallif": Array.isArray(pack.author)
+            ? pack.author.join(shortcuts.divider)
+            : pack.author,
         "Oxirgi o'zgarish": new Date(pack.updated).toString(),
-        "O'rnatish uchun": pack.install,
+        "O'rnatish uchun": pack.install.replaceAll(/(&lt;|&gt;)/ig, ""),
     });

@@ -8,6 +8,7 @@ export const responses = {
 export const shortcuts = {
     space: " ",
     divider: ", ",
+    list: ",\n ",
     newLineDivider: (data: any) =>
         `,\n${shortcuts.space.repeat(findLength(Object.keys(data)))}`,
 };
@@ -21,7 +22,7 @@ export const spacer = (length: number, input: string): string => {
 };
 
 export const delimiter = (key: string, value: string, length: number) => {
-    return `${key}${spacer(length, key)}: ${value}}`;
+    return `${key}${spacer(length, key)}: ${value}\n`;
 };
 
 export const createOutput = (data: Record<string, string>) => {
