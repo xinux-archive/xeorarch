@@ -1,5 +1,4 @@
-// deno-lint-ignore-file no-explicit-any
-import { DOMParser, Element } from "./deps.ts";
+import { DOMParser } from "./deps.ts";
 
 export interface OldGroups {
     arch: string;
@@ -37,10 +36,12 @@ export const groups = async (cursor = 1, limit = 10): Promise<ListGroup[]> => {
             "text/html",
         );
 
-        const table = page!.querySelectorAll("#content > div.box > table > tbody > tr");
+        const table = page!.querySelectorAll(
+            "#content > div.box > table > tbody > tr",
+        );
         const groupsData: ListGroup[] = [];
 
-      table!.forEach((tr) => {
+        table!.forEach((tr) => {
             groupsData.push({
                 arch: tr.childNodes[1].textContent,
                 name: tr.childNodes[3].textContent,
@@ -50,8 +51,8 @@ export const groups = async (cursor = 1, limit = 10): Promise<ListGroup[]> => {
         });
 
         return groupsData.slice(
-          (cursor - 1) * limit,
-          cursor * limit,
+            (cursor - 1) * limit,
+            cursor * limit,
         );
     });
 };
@@ -61,32 +62,37 @@ export const groups = async (cursor = 1, limit = 10): Promise<ListGroup[]> => {
  * @param name name of group
  * @param arch aarch of group
  */
-export const group = async (name: string, arch = "x86_64"): Promise<OldGroups> => {
-  return await fetch(`https://archlinux.org/groups/${arch}/${name}/`)
-    .then(async (r) => {
-      const page = new DOMParser().parseFromString(
-        await r.text(),
-        "text/html",
-      );
-      const table = page!.querySelectorAll("#content > div.box > table > tbody > tr");
-      const groupsData: Package[] = [];
+export const group = async (
+    name: string,
+    arch = "x86_64",
+): Promise<OldGroups> => {
+    return await fetch(`https://archlinux.org/groups/${arch}/${name}/`)
+        .then(async (r) => {
+            const page = new DOMParser().parseFromString(
+                await r.text(),
+                "text/html",
+            );
+            const table = page!.querySelectorAll(
+                "#content > div.box > table > tbody > tr",
+            );
+            const groupsData: Package[] = [];
 
-      table!.forEach((tr) => {
-          groupsData.push({
-            arch: tr.childNodes[1].textContent,
-            repo: tr.childNodes[3].textContent,
-            name: tr.childNodes[5].textContent,
-            version: tr.childNodes[7].textContent,
-            desc: tr.childNodes[9].textContent,
-            updated: tr.childNodes[11].textContent,
-            flag: tr.childNodes[13].textContent,
-          });
-      })
+            table!.forEach((tr) => {
+                groupsData.push({
+                    arch: tr.childNodes[1].textContent,
+                    repo: tr.childNodes[3].textContent,
+                    name: tr.childNodes[5].textContent,
+                    version: tr.childNodes[7].textContent,
+                    desc: tr.childNodes[9].textContent,
+                    updated: tr.childNodes[11].textContent,
+                    flag: tr.childNodes[13].textContent,
+                });
+            });
 
-      return {
-        arch,
-        name,
-        packs: groupsData,
-      };
-    });
+            return {
+                arch,
+                name,
+                packs: groupsData,
+            };
+        });
 };

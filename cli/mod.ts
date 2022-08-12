@@ -18,7 +18,9 @@ export const wrapper = async () => {
                     const search = await Both(pack);
                     console.log(
                         "Topilgan yaqin natijalar:\n",
-                        search.map(p => p.name).slice(0, 20).join(shortcuts.list),
+                        search.map((p) => p.name).slice(0, 20).join(
+                            shortcuts.list,
+                        ),
                     );
                 })
                 : console.log(colors.red("Ka'lit so'zlari kiritilmadi!"));
@@ -31,12 +33,18 @@ export const wrapper = async () => {
                     if (search[0]) {
                         console.log(both(search[0]));
                     } else {
-                        console.log("Ushbu kalit so'zi bo'yicha paket topilmadi!")
+                        console.log(
+                            "Ushbu kalit so'zi bo'yicha paket topilmadi!",
+                        );
                     }
                 })
                 : console.log(colors.red("Ka'lit so'zlari kiritilmadi!"));
             break;
         default:
-            console.error(colors.red("Noto'g'ri komanda! \"xea help\" ishga tushuring ko'proq ma'lumotlar uchun"));
+            console.error(
+                colors.red(
+                    "Noto'g'ri komanda! \"xea help\" ishga tushuring ko'proq ma'lumotlar uchun",
+                ),
+            );
     }
 };
