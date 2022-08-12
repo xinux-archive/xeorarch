@@ -1,5 +1,5 @@
 // deno-lint-ignore-file no-explicit-any
-import { Fuse } from "./platform.deno.ts";
+import { Fuse } from "./deps.ts";
 import STD from "./std.ts";
 import AUR from "./aur.ts";
 
